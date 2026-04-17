@@ -162,9 +162,14 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: 1.12fr 0.88fr;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
   gap: 24px;
   min-height: 74vh;
+  overflow: hidden;
+}
+
+.hero > * {
+  min-width: 0;
 }
 
 .hero-copy {
@@ -173,6 +178,7 @@ main {
   flex-direction: column;
   justify-content: center;
   padding: 16px 12px;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -198,6 +204,7 @@ h1 {
   font-weight: 800;
   letter-spacing: -0.07em;
   max-width: 8.5ch;
+  overflow-wrap: anywhere;
 }
 
 h2 {
@@ -281,6 +288,7 @@ p {
   grid-template-columns: 1fr;
   gap: 18px;
   align-self: center;
+  min-width: 0;
 }
 
 .art-card {
@@ -339,6 +347,7 @@ p {
   border-radius: 999px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  overflow-wrap: anywhere;
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
@@ -612,13 +621,14 @@ p {
 
 @media (max-width: 940px) {
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     min-height: auto;
   }
 
   .hero-art {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: none;
+    width: 100%;
   }
 }
 
@@ -634,6 +644,7 @@ p {
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
+    padding: 20px;
   }
 
   .site-nav,
@@ -649,6 +660,10 @@ p {
   .section,
   .intro-strip {
     padding: 20px;
+  }
+
+  .hero-copy {
+    padding: 0;
   }
 
   .contact-section .section-heading {
@@ -669,7 +684,7 @@ p {
   }
 
   .hero-art {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     max-width: none;
   }
 }
