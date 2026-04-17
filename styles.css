@@ -269,11 +269,13 @@ p {
 .button-dark {
   background: #171511;
   color: #f5f0e8;
+  -webkit-text-fill-color: #f5f0e8;
 }
 
 body.theme-green-tea .button-dark {
   background: #2d4724;
   color: #eef3e8;
+  -webkit-text-fill-color: #eef3e8;
 }
 
 .button-light {
