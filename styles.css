@@ -366,7 +366,8 @@ body.theme-green-tea .button-dark {
 }
 
 .section-gallery,
-.moments-section {
+.moments-section,
+.martina-section {
   display: grid;
   gap: 24px;
 }
@@ -381,6 +382,34 @@ body.theme-green-tea .button-dark {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+}
+
+.martina-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr 0.9fr;
+  gap: 18px;
+}
+
+.martina-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+  padding: 22px;
+}
+
+.martina-card-intro {
+  background:
+    linear-gradient(135deg, rgba(255, 249, 240, 0.95), rgba(242, 235, 223, 0.92));
+}
+
+.martina-list {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.martina-list li + li {
+  margin-top: 10px;
 }
 
 .feature-card,
@@ -593,7 +622,8 @@ body.theme-green-tea .intro-strip {
   .hero,
   .story-section,
   .gallery-grid,
-  .moments-grid {
+  .moments-grid,
+  .martina-grid {
     grid-template-columns: 1fr;
   }
 
