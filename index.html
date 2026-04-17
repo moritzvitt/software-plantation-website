@@ -19,6 +19,19 @@
   <body>
     <div class="page-shell">
       <header class="site-header">
+        <button
+          class="mobile-nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Navigation öffnen"
+        >
+          <img
+            class="brand-logo"
+            src="./assets/Logo/SoftwarePlantation_Logo_schwarz.svg"
+            alt=""
+          />
+        </button>
         <a class="brand" href="#top" aria-label="Software Plantation Startseite">
           <img
             class="brand-logo"
@@ -27,7 +40,7 @@
           />
           <span class="brand-text">Software Plantation</span>
         </a>
-        <nav class="site-nav" aria-label="Primär">
+        <nav class="site-nav" id="site-nav" aria-label="Primär">
           <a href="#kunden">Kunden</a>
           <a href="#herausforderungen">Herausforderungen</a>
           <a href="#substanz">Substanz</a>

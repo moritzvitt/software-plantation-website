@@ -1,5 +1,20 @@
 const revealBlocks = document.querySelectorAll(".reveal-block");
 const sectionLinks = document.querySelectorAll('a[href^="#"]');
+const siteHeader = document.querySelector(".site-header");
+const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+
+function isMobileHeaderMode() {
+  return window.matchMedia("(max-width: 780px)").matches;
+}
+
+function setMobileHeaderOpen(isOpen) {
+  if (!siteHeader || !mobileNavToggle) {
+    return;
+  }
+
+  siteHeader.classList.toggle("is-open", isOpen);
+  mobileNavToggle.setAttribute("aria-expanded", String(isOpen));
+}
 
 function easeInOutCubic(progress) {
   return progress < 0.5
@@ -55,6 +70,28 @@ revealBlocks.forEach((block) => {
   observer.observe(block);
 });
 
+if (mobileNavToggle && siteHeader) {
+  mobileNavToggle.addEventListener("click", () => {
+    setMobileHeaderOpen(!siteHeader.classList.contains("is-open"));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!isMobileHeaderMode() || !siteHeader.classList.contains("is-open")) {
+      return;
+    }
+
+    if (!siteHeader.contains(event.target)) {
+      setMobileHeaderOpen(false);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (!isMobileHeaderMode()) {
+      setMobileHeaderOpen(false);
+    }
+  });
+}
+
 sectionLinks.forEach((link) => {
   const targetId = link.getAttribute("href");
 
@@ -71,5 +108,9 @@ sectionLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
     smoothScrollToElement(target);
+
+    if (isMobileHeaderMode()) {
+      setMobileHeaderOpen(false);
+    }
   });
 });
