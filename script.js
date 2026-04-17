@@ -24,36 +24,26 @@ revealElements.forEach((element) => {
   observer.observe(element);
 });
 
-const patternClasses = [
-  "pattern-dawn",
-  "pattern-ripple",
-  "pattern-paper",
-  "pattern-mist",
-  "pattern-tiles",
-  "pattern-wave",
+const imageSources = [
+  "./assets/images/blurred-flower-art.jpg",
+  "./assets/images/abstract-flower-blur.jpg",
+  "./assets/images/dreamy-abstract-floral.jpg",
+  "./assets/images/minimalist-floral-art.jpg",
 ];
 
 const shuffleButton = document.querySelector("#shuffle-button");
-const shufflableCards = document.querySelectorAll(
-  ".art-card, .feature-image, .moment-card"
+const shufflableImages = document.querySelectorAll(
+  ".art-card img, .feature-image img, .moment-card img"
 );
 
 shuffleButton?.addEventListener("click", () => {
-  shufflableCards.forEach((card) => {
-    const currentPattern = patternClasses.find((patternClass) =>
-      card.classList.contains(patternClass)
+  shufflableImages.forEach((image) => {
+    const availableSources = imageSources.filter(
+      (source) => !image.src.endsWith(source.replace("./", ""))
     );
+    const nextSource =
+      availableSources[Math.floor(Math.random() * availableSources.length)];
 
-    const availablePatterns = patternClasses.filter(
-      (patternClass) => patternClass !== currentPattern
-    );
-    const nextPattern =
-      availablePatterns[Math.floor(Math.random() * availablePatterns.length)];
-
-    if (currentPattern) {
-      card.classList.remove(currentPattern);
-    }
-
-    card.classList.add(nextPattern);
+    image.src = nextSource;
   });
 });
