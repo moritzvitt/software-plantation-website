@@ -31,6 +31,13 @@ body {
   min-height: 100vh;
 }
 
+body.theme-green-tea {
+  background:
+    radial-gradient(circle at top left, rgba(243, 249, 236, 0.82), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(190, 207, 173, 0.42), transparent 30%),
+    linear-gradient(180deg, #f6f1e7 0%, #ece6d6 100%);
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -106,11 +113,23 @@ a {
   color: var(--muted);
 }
 
-.site-nav a {
+.site-nav a,
+.site-nav button {
   position: relative;
+  color: inherit;
+  font: inherit;
 }
 
-.site-nav a::after {
+.site-nav button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.site-nav a::after,
+.site-nav button::after {
   content: "";
   position: absolute;
   left: 0;
@@ -124,8 +143,15 @@ a {
 }
 
 .site-nav a:hover::after,
-.site-nav a:focus-visible::after {
+.site-nav a:focus-visible::after,
+.site-nav button:hover::after,
+.site-nav button:focus-visible::after,
+.site-nav .is-active::after {
   transform: scaleX(1);
+}
+
+.site-nav .is-active {
+  color: #35562f;
 }
 
 main {
@@ -246,6 +272,11 @@ p {
 .button-dark {
   background: #171511;
   color: #f5f0e8;
+}
+
+body.theme-green-tea .button-dark {
+  background: #2d4724;
+  color: #eef3e8;
 }
 
 .button-light {
@@ -532,6 +563,18 @@ p {
 
 .site-footer {
   margin-top: 22px;
+}
+
+body.theme-green-tea .page-shell {
+  background: rgba(245, 247, 238, 0.76);
+}
+
+body.theme-green-tea .site-header,
+body.theme-green-tea .site-footer,
+body.theme-green-tea .hero,
+body.theme-green-tea .section,
+body.theme-green-tea .intro-strip {
+  background: rgba(248, 249, 242, 0.74);
 }
 
 .reveal {
