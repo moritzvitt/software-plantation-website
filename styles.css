@@ -113,23 +113,13 @@ a {
   color: var(--muted);
 }
 
-.site-nav a,
-.site-nav button {
+.site-nav a {
   position: relative;
   color: inherit;
   font: inherit;
 }
 
-.site-nav button {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-}
-
-.site-nav a::after,
-.site-nav button::after {
+.site-nav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -144,8 +134,6 @@ a {
 
 .site-nav a:hover::after,
 .site-nav a:focus-visible::after,
-.site-nav button:hover::after,
-.site-nav button:focus-visible::after,
 .site-nav .is-active::after {
   transform: scaleX(1);
 }

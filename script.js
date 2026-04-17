@@ -124,13 +124,16 @@ const themes = {
 const heroCards = document.querySelectorAll(".hero-art .art-card");
 const galleryImages = document.querySelectorAll(".gallery-grid .feature-image img");
 const momentImages = document.querySelectorAll(".moments-grid .moment-card img");
-const galleryThemeLink = document.querySelector('[data-theme-trigger="floral"]');
-const greenTeaToggle = document.querySelector("#green-tea-toggle");
+const themeTriggers = document.querySelectorAll("[data-theme-trigger]");
 let currentTheme = "floral";
 
 function setActiveThemeTrigger(themeName) {
-  galleryThemeLink?.classList.toggle("is-active", themeName === "floral");
-  greenTeaToggle?.classList.toggle("is-active", themeName === "tea");
+  themeTriggers.forEach((trigger) => {
+    trigger.classList.toggle(
+      "is-active",
+      trigger.dataset.themeTrigger === themeName
+    );
+  });
 }
 
 function renderTheme(themeName) {
@@ -178,12 +181,11 @@ function renderTheme(themeName) {
 const shuffleButton = document.querySelector("#shuffle-button");
 const shufflableImages = document.querySelectorAll(".feature-image img, .moment-card img");
 
-galleryThemeLink?.addEventListener("click", () => {
-  renderTheme("floral");
-});
-
-greenTeaToggle?.addEventListener("click", () => {
-  renderTheme("tea");
+themeTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", (event) => {
+    event.preventDefault();
+    renderTheme(trigger.dataset.themeTrigger);
+  });
 });
 
 shuffleButton?.addEventListener("click", () => {
