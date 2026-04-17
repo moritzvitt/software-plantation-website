@@ -45,6 +45,8 @@ body::before {
 a {
   color: inherit;
   text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 a:visited {
@@ -225,6 +227,7 @@ h3 {
 
 p {
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .hero-text,
@@ -586,6 +589,8 @@ p {
 }
 
 .contact-card a {
+  display: inline-block;
+  max-width: 100%;
   font-weight: 700;
 }
 
