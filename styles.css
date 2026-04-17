@@ -477,6 +477,7 @@ p {
 .info-grid {
   display: grid;
   gap: 18px;
+  min-width: 0;
 }
 
 .three-cols {
@@ -500,6 +501,8 @@ p {
   border-radius: var(--radius-lg);
   background: var(--surface-strong);
   padding: 22px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .feature-accent {
@@ -539,6 +542,7 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+  min-width: 0;
 }
 
 .timeline-number {
@@ -578,6 +582,7 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+  min-width: 0;
 }
 
 .contact-card a {
@@ -636,7 +641,7 @@ p {
   .page-shell {
     width: min(100% - 16px, 100%);
     margin: 8px auto;
-    padding: 14px;
+    padding: 12px;
     border-radius: 28px;
   }
 
@@ -659,7 +664,30 @@ p {
 
   .section,
   .intro-strip {
-    padding: 20px;
+    padding: 16px;
+  }
+
+  .section,
+  .intro-strip,
+  .info-grid,
+  .timeline,
+  .contact-grid,
+  .partnership-points,
+  .section-accent-grid,
+  .principles-grid {
+    min-width: 0;
+  }
+
+  .info-card,
+  .substance-card,
+  .timeline-step,
+  .contact-card,
+  .partnership-points article,
+  .image-card,
+  .accent-note,
+  .rhythm-copy {
+    width: 100%;
+    max-width: 100%;
   }
 
   .hero-copy {
@@ -690,6 +718,29 @@ p {
 }
 
 @media (max-width: 620px) {
+  .page-shell {
+    width: calc(100% - 12px);
+    margin: 6px auto;
+    padding: 10px;
+  }
+
+  .site-header,
+  .site-footer,
+  .section,
+  .intro-strip {
+    border-radius: 20px;
+  }
+
+  .site-header,
+  .site-footer {
+    padding: 16px;
+  }
+
+  .section,
+  .intro-strip {
+    padding: 14px;
+  }
+
   .hero-art {
     max-width: none;
   }
