@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Software Plantation</title>
+    <meta
+      name="description"
+      content="A calm, gallery-inspired family website concept with soothing visuals and room for photos, stories, and memories."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top">Software Plantation</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#gallery">Gallery</a>
+          <a href="#story">Story</a>
+          <a href="#moments">Moments</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Software Plantation</p>
+            <h1>
+              A quiet, gallery-like home for family memories, small rituals, and
+              beautiful everyday life.
+            </h1>
+            <p class="hero-text">
+              Inspired by clean editorial websites, but softened for a personal
+              family space. We can later swap these abstract art cards for real
+              photos, favorite places, recipes, travels, or stories.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-dark" href="#gallery">Explore the look</a>
+              <a class="button button-light" href="#story">See the structure</a>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <article class="art-card art-card-large pattern-dawn">
+              <span>Soft Morning</span>
+            </article>
+            <article class="art-card pattern-ripple">
+              <span>Gentle Rhythm</span>
+            </article>
+            <article class="art-card pattern-paper">
+              <span>Quiet Texture</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="intro-strip">
+          <p>
+            Three directions combined:
+            <strong>family gallery</strong>,
+            <strong>photo journal</strong>,
+            <strong>warm modern homepage</strong>.
+          </p>
+        </section>
+
+        <section class="section section-gallery" id="gallery">
+          <div class="section-heading">
+            <p class="eyebrow">Gallery feeling</p>
+            <h2>Large visual cards with breathing room</h2>
+          </div>
+          <div class="gallery-grid">
+            <article class="feature-card">
+              <div class="feature-image pattern-mist"></div>
+              <div class="feature-copy">
+                <h3>Sunday Walks</h3>
+                <p>
+                  This could become a photo series from favorite places, parks,
+                  gardens, or familiar streets.
+                </p>
+              </div>
+            </article>
+            <article class="feature-card">
+              <div class="feature-image pattern-tiles"></div>
+              <div class="feature-copy">
+                <h3>Home Rituals</h3>
+                <p>
+                  A calm section for coffee, reading corners, flowers, recipes,
+                  or tiny daily traditions.
+                </p>
+              </div>
+            </article>
+            <article class="feature-card">
+              <div class="feature-image pattern-wave"></div>
+              <div class="feature-copy">
+                <h3>Places We Love</h3>
+                <p>
+                  Travel memories, hometown views, or a rotating collection of
+                  meaningful landscapes can live here.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section story-section" id="story">
+          <div class="story-copy">
+            <p class="eyebrow">Story structure</p>
+            <h2>Simple enough to feel effortless, personal enough to matter</h2>
+            <p>
+              The homepage can stay minimal and still have depth. We can anchor
+              it around your parents’ names, a short welcome note, selected
+              photos, and a few curated sections that feel intimate rather than
+              busy.
+            </p>
+          </div>
+          <div class="story-list">
+            <article>
+              <span>01</span>
+              <h3>Welcome</h3>
+              <p>A gentle introduction with one beautiful image and a line about them.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Gallery</h3>
+              <p>A scrollable set of images that feels more like an exhibition than an album.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Memories</h3>
+              <p>Selected stories, favorite recipes, letters, travels, or family milestones.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section moments-section" id="moments">
+          <div class="section-heading">
+            <p class="eyebrow">Moment cards</p>
+            <h2>Soothing placeholders we can replace later</h2>
+          </div>
+          <div class="moments-grid">
+            <article class="moment-card pattern-dawn">
+              <div>
+                <p>Morning light</p>
+                <h3>For future family portraits</h3>
+              </div>
+            </article>
+            <article class="moment-card pattern-paper">
+              <div>
+                <p>Natural texture</p>
+                <h3>For handwritten notes or recipes</h3>
+              </div>
+            </article>
+            <article class="moment-card pattern-ripple">
+              <div>
+                <p>Slow movement</p>
+                <h3>For travel moments and quiet landscapes</h3>
+              </div>
+            </article>
+            <article class="moment-card pattern-tiles">
+              <div>
+                <p>Soft geometry</p>
+                <h3>For a family archive or timeline</h3>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Made as a first concept for a family website.</p>
+        <button class="button button-light" id="shuffle-button" type="button">
+          Shuffle the art cards
+        </button>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
