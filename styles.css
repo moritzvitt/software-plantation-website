@@ -249,7 +249,7 @@ p {
 
 .hero-art {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 18px;
   align-content: stretch;
   align-self: start;
@@ -293,7 +293,7 @@ p {
 
 .art-card-large {
   grid-row: span 1;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1.02;
 }
 
 .art-card span,
