@@ -303,9 +303,11 @@ p {
   font-size: 1.8rem;
   color: rgba(35, 28, 20, 0.82);
   background: rgba(255, 250, 245, 0.52);
-  padding: 8px 12px;
+  max-width: calc(100% - 40px);
+  padding: 12px 22px 14px;
   border-radius: 999px;
   backdrop-filter: blur(8px);
+  line-height: 1.08;
 }
 
 .intro-strip,
@@ -512,6 +514,12 @@ p {
     grid-row: span 1;
     min-height: 320px;
   }
+
+  .art-card span {
+    font-size: 1.55rem;
+    max-width: calc(100% - 32px);
+    padding: 11px 18px 13px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -557,6 +565,12 @@ p {
   .moment-card h3,
   .art-card span {
     font-size: 1.8rem;
+  }
+
+  .art-card span {
+    font-size: 1.35rem;
+    max-width: calc(100% - 24px);
+    padding: 10px 16px 12px;
   }
 
   .button {
