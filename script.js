@@ -1,6 +1,8 @@
 const revealElements = document.querySelectorAll(
   ".feature-card, .story-list article, .moment-card, .intro-strip"
 );
+const topSection = document.querySelector("#top");
+const sectionLinks = document.querySelectorAll('a[href^="#"]');
 
 revealElements.forEach((element) => {
   element.classList.add("reveal");
@@ -127,6 +129,42 @@ const momentImages = document.querySelectorAll(".moments-grid .moment-card img")
 const themeTriggers = document.querySelectorAll("[data-theme-trigger]");
 let currentTheme = "floral";
 
+function easeInOutCubic(progress) {
+  return progress < 0.5
+    ? 4 * progress * progress * progress
+    : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+}
+
+function smoothScrollToElement(target, duration = 900) {
+  if (!target) {
+    return;
+  }
+
+  const startY = window.scrollY;
+  const targetY = target.getBoundingClientRect().top + window.scrollY - 12;
+  const distance = targetY - startY;
+
+  if (Math.abs(distance) < 4) {
+    return;
+  }
+
+  const startTime = performance.now();
+
+  function step(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeInOutCubic(progress);
+
+    window.scrollTo(0, startY + distance * eased);
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
 function setActiveThemeTrigger(themeName) {
   themeTriggers.forEach((trigger) => {
     trigger.classList.toggle(
@@ -185,6 +223,33 @@ themeTriggers.forEach((trigger) => {
   trigger.addEventListener("click", (event) => {
     event.preventDefault();
     renderTheme(trigger.dataset.themeTrigger);
+
+    if (trigger.dataset.themeTrigger === "tea") {
+      smoothScrollToElement(topSection);
+    }
+  });
+});
+
+sectionLinks.forEach((link) => {
+  const targetId = link.getAttribute("href");
+
+  if (!targetId || targetId === "#") {
+    return;
+  }
+
+  const target = document.querySelector(targetId);
+
+  if (!target) {
+    return;
+  }
+
+  link.addEventListener("click", (event) => {
+    if (link.dataset.themeTrigger === "tea") {
+      return;
+    }
+
+    event.preventDefault();
+    smoothScrollToElement(target);
   });
 });
 
