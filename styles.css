@@ -556,6 +556,46 @@ p {
   font-weight: 800;
 }
 
+.diagram-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.diagram-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+  padding: 22px;
+}
+
+.diagram-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 210px;
+  margin-bottom: 18px;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 42%),
+    linear-gradient(135deg, rgba(124, 157, 92, 0.08), rgba(214, 127, 39, 0.08));
+  color: rgba(31, 27, 22, 0.9);
+}
+
+.diagram-visual svg {
+  width: min(100%, 220px);
+  height: auto;
+}
+
+.diagram-card h3 {
+  margin-bottom: 12px;
+}
+
+.diagram-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .detail-list {
   margin: 14px 0 0;
   padding-left: 18px;
@@ -644,6 +684,7 @@ p {
 @media (max-width: 1180px) {
   .partnership-section,
   .section-accent-grid,
+  .diagram-grid,
   .three-cols,
   .four-cols,
   .two-cols,
