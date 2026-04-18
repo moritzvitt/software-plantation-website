@@ -361,6 +361,21 @@ p {
   object-fit: cover;
 }
 
+.art-card-diagram {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: rgba(45, 59, 35, 0.52);
+}
+
+.art-card-diagram svg {
+  width: min(100%, 238px);
+  height: auto;
+}
+
 .art-card span {
   position: absolute;
   left: 20px;
@@ -386,6 +401,13 @@ p {
 .art-card-network,
 .art-card-system {
   background: linear-gradient(135deg, #f6efe3 0%, #e8ddcc 100%);
+}
+
+.art-card-network {
+  background:
+    radial-gradient(circle at 22% 24%, rgba(124, 157, 92, 0.14), transparent 18%),
+    radial-gradient(circle at 78% 30%, rgba(214, 127, 39, 0.12), transparent 20%),
+    linear-gradient(135deg, #f5eedf 0%, #e8dfd0 54%, #efe5d7 100%);
 }
 
 .intro-strip {
