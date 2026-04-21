@@ -13,6 +13,15 @@
   --sand: #e5d3bf;
   --radius-xl: 32px;
   --radius-lg: 24px;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --shadow-soft:
+    0 1px 1px rgba(65, 50, 32, 0.04),
+    0 10px 30px rgba(65, 50, 32, 0.05);
 }
 
 * {
@@ -56,8 +65,8 @@ a:visited {
 .page-shell {
   position: relative;
   width: min(1220px, calc(100% - 32px));
-  margin: 20px auto;
-  padding: 24px;
+  margin: var(--space-4) auto;
+  padding: var(--space-4);
   border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 40px;
   background: rgba(250, 247, 241, 0.72);
@@ -85,7 +94,7 @@ a:visited {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--space-3);
   padding: 18px 22px;
   border-radius: var(--radius-lg);
 }
@@ -189,7 +198,7 @@ main {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
-  gap: 24px;
+  gap: var(--space-4);
   min-height: 74vh;
   overflow: hidden;
 }
@@ -203,16 +212,17 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 16px 12px;
+  padding: var(--space-3) var(--space-2);
   min-width: 0;
 }
 
 .eyebrow {
-  margin: 0 0 16px;
+  margin: 0 0 var(--space-3);
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.74rem;
   color: var(--muted);
+  text-wrap: balance;
 }
 
 h1,
@@ -231,6 +241,7 @@ h1 {
   letter-spacing: -0.07em;
   max-width: 8.5ch;
   overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 h2 {
@@ -239,6 +250,7 @@ h2 {
   line-height: 0.97;
   font-weight: 800;
   letter-spacing: -0.05em;
+  text-wrap: balance;
 }
 
 h3 {
@@ -247,11 +259,14 @@ h3 {
   line-height: 1;
   font-weight: 800;
   letter-spacing: -0.04em;
+  text-wrap: balance;
 }
 
 p {
   line-height: 1.6;
   overflow-wrap: anywhere;
+  text-wrap: pretty;
+  hyphens: auto;
 }
 
 .hero-text,
@@ -287,6 +302,7 @@ p {
   border-radius: 999px;
   border: 1px solid transparent;
   font-weight: 700;
+  box-shadow: var(--shadow-soft);
   transition:
     transform 160ms ease,
     background 160ms ease,
@@ -368,11 +384,11 @@ p {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  color: rgba(45, 59, 35, 0.52);
+  color: rgba(45, 59, 35, 0.44);
 }
 
 .art-card-diagram svg {
-  width: min(100%, 238px);
+  width: min(100%, 226px);
   height: auto;
 }
 
@@ -410,6 +426,14 @@ p {
     linear-gradient(135deg, #f5eedf 0%, #e8dfd0 54%, #efe5d7 100%);
 }
 
+.art-card-system {
+  background:
+    radial-gradient(circle at 24% 26%, rgba(124, 157, 92, 0.12), transparent 16%),
+    radial-gradient(circle at 76% 22%, rgba(214, 127, 39, 0.1), transparent 18%),
+    radial-gradient(circle at 68% 74%, rgba(255, 255, 255, 0.22), transparent 22%),
+    linear-gradient(145deg, #f4eee2 0%, #e6dccb 48%, #efe6d7 100%);
+}
+
 .intro-strip {
   position: relative;
   padding: 22px 28px;
@@ -422,12 +446,12 @@ p {
 .skeleton-section,
 .mvp-section {
   display: grid;
-  gap: 24px;
+  gap: var(--space-4);
 }
 
 .section-heading {
   display: grid;
-  gap: 10px;
+  gap: var(--space-2);
   max-width: 52rem;
 }
 
@@ -444,6 +468,7 @@ p {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
 }
 
 .image-card {
@@ -552,6 +577,7 @@ p {
   padding: 22px;
   min-width: 0;
   max-width: 100%;
+  box-shadow: var(--shadow-soft);
 }
 
 .feature-accent {
@@ -589,6 +615,7 @@ p {
   border-radius: var(--radius-lg);
   background: var(--surface-strong);
   padding: 22px;
+  box-shadow: var(--shadow-soft);
 }
 
 .diagram-visual {
@@ -616,6 +643,11 @@ p {
 .diagram-card p {
   margin: 0;
   color: var(--muted);
+}
+
+.site-footer p:last-child {
+  max-width: 48ch;
+  text-align: right;
 }
 
 .detail-list {
