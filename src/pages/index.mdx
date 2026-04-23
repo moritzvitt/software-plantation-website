@@ -1,0 +1,445 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+export const layout = BaseLayout;
+---
+
+<section className="hero section">
+  <div className="hero-copy">
+    <p className="eyebrow">Software Plantation GmbH</p>
+    <h1>Software mit Substanz.</h1>
+    <p className="hero-text">
+      Wir unterstützen Unternehmen dabei, ihre Softwareentwicklung zu
+      professionalisieren: von halbwegs funktionierenden Lösungen hin zu
+      robusten, professionellen Systemen im produktiven Einsatz.
+    </p>
+    <div className="hero-actions">
+      <a className="button button-dark" href="#kontakt">Kontakt aufnehmen</a>
+      <a className="button button-light" href="#mvp">Zum MVP-Weg</a>
+    </div>
+    <div className="hero-signals" aria-label="Leistungsversprechen">
+      <span>Analyse</span>
+      <span>Architektur</span>
+      <span>Betrieb</span>
+    </div>
+  </div>
+  <div className="hero-art">
+    <a
+      className="art-card art-card-network"
+      href="#substanz"
+      aria-label="Zum Abschnitt Substanz springen"
+    >
+      <div className="art-card-diagram" aria-hidden="true">
+        <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="54" y="128" width="112" height="28" rx="6" />
+            <rect x="76" y="98" width="72" height="26" rx="6" />
+            <rect x="92" y="70" width="40" height="24" rx="6" />
+            <line x1="70" y1="128" x2="70" y2="156" />
+            <line x1="150" y1="128" x2="150" y2="156" />
+            <line x1="88" y1="98" x2="88" y2="124" />
+            <line x1="136" y1="98" x2="136" y2="124" />
+            <line x1="110" y1="46" x2="110" y2="70" />
+            <circle cx="110" cy="42" r="4" fill="currentColor" stroke="none" />
+            <polyline points="54,156 44,168 176,168 166,156" />
+          </g>
+        </svg>
+      </div>
+      <span>Architektur</span>
+    </a>
+    <a
+      className="art-card art-card-system"
+      href="#mvp"
+      aria-label="Zum Abschnitt MVP springen"
+    >
+      <div className="art-card-diagram" aria-hidden="true">
+        <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="52" cy="52" r="4" fill="currentColor" stroke="none" />
+            <line x1="56" y1="52" x2="94" y2="52" />
+            <rect x="94" y="42" width="36" height="20" rx="6" />
+            <line x1="130" y1="52" x2="164" y2="52" />
+            <rect x="164" y="42" width="24" height="20" rx="6" />
+
+            <line x1="112" y1="62" x2="112" y2="102" />
+            <line x1="176" y1="62" x2="176" y2="102" />
+
+            <rect x="78" y="102" width="52" height="24" rx="8" />
+            <rect x="150" y="102" width="52" height="24" rx="8" />
+
+            <line x1="104" y1="126" x2="104" y2="164" />
+            <line x1="176" y1="126" x2="176" y2="164" />
+            <line x1="104" y1="164" x2="176" y2="164" />
+            <line x1="140" y1="164" x2="140" y2="184" />
+
+            <rect x="112" y="184" width="56" height="20" rx="7" />
+          </g>
+        </svg>
+      </div>
+      <span>Betrieb &amp; MVP</span>
+    </a>
+  </div>
+</section>
+
+<section className="section section-grid reveal-block" id="kunden">
+  <div className="section-heading">
+    <p className="eyebrow">Für wen wir arbeiten</p>
+    <h2>KMU mit fachlicher Stärke und wachsender Software-Komplexität</h2>
+    <p>
+      Unsere Kunden bringen tiefes Domänenwissen mit. Software ist oft
+      bereits geschäftskritisch, wurde aber bisher nebenbei oder in
+      kleinen Teams entwickelt.
+    </p>
+  </div>
+  <div className="info-grid three-cols">
+    <article className="info-card">
+      <h3>Domänenwissen</h3>
+      <p>
+        Starke fachliche Expertise und klare Marktkenntnis sind vorhanden,
+        die Softwarebasis wächst oft schneller als die Organisation.
+      </p>
+    </article>
+    <article className="info-card">
+      <h3>Produktiver Einsatz</h3>
+      <p>
+        Erste Inhouse-Tools oder Anwendungen sind bereits produktiv im
+        Einsatz und werden zum zentralen Bestandteil neuer Geschäftsfelder.
+      </p>
+    </article>
+    <article className="info-card">
+      <h3>Wachsende Verantwortung</h3>
+      <p>
+        Know-how und Verantwortung hängen häufig an wenigen Personen,
+        während Anforderungen, Verfügbarkeit und Änderungsdruck steigen.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section className="section section-grid reveal-block" id="herausforderungen">
+  <div className="section-heading">
+    <p className="eyebrow">Herausforderungen</p>
+    <h2>Wenn Software gewachsen ist, steigen Reibung, Risiko und Unklarheit</h2>
+  </div>
+  <div className="section-accent-grid">
+    <article className="image-card image-card-wide">
+      <img
+        src="/assets/images/brand/abstract-calming-shapes.jpg"
+        alt="Abstrakte ruhige Formen in Grün-, Sand- und Orangetönen"
+      />
+    </article>
+    <article className="accent-note">
+      <p className="eyebrow">Systemdruck</p>
+      <h3>Prozesse, Architektur und Betrieb greifen ineinander</h3>
+      <p>
+        Reibung entsteht selten isoliert. Meist verstärken sich
+        methodische, technische und operative Schwächen gegenseitig.
+      </p>
+    </article>
+  </div>
+  <div className="info-grid four-cols">
+    <article className="info-card feature-accent">
+      <h3>Prozesse</h3>
+      <p>
+        Suboptimale Entwicklungsprozesse, geringe methodische Flexibilität
+        und wenig Erfahrung im Management von Softwareprojekten.
+      </p>
+    </article>
+    <article className="info-card">
+      <h3>Architektur</h3>
+      <p>
+        Unklare Zukunftsperspektive von Architekturentscheidungen,
+        mangelnde Wartbarkeit und technologische Abhängigkeiten.
+      </p>
+    </article>
+    <article className="info-card">
+      <h3>Betrieb</h3>
+      <p>
+        24/7-Anforderungen, Hochverfügbarkeit, Integration in fremde
+        Systemlandschaften und große Datenmengen erhöhen den Druck.
+      </p>
+    </article>
+    <article className="info-card">
+      <h3>Kosten &amp; Aufwand</h3>
+      <p>
+        Lebenszykluskosten bleiben intransparent, Aufwände sind schwer
+        belastbar einzuschätzen und Automatisierung ist oft unzureichend.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section className="section partnership-section reveal-block">
+  <div className="partnership-copy">
+    <p className="eyebrow">Zusammenarbeit auf Augenhöhe</p>
+    <h2>Nicht externer Lieferant, sondern Teil des Teams</h2>
+    <p>
+      Entscheidungen werden transparent getroffen, Annahmen offen benannt
+      und Risiken gemeinsam bewertet. Unser Ziel ist nicht neue
+      Abhängigkeit, sondern die Professionalisierung und Unabhängigkeit des
+      Kunden.
+    </p>
+  </div>
+  <div className="partnership-points">
+    <article>
+      <span>01</span>
+      <h3>Transparenz</h3>
+      <p>Entscheidungen, Risiken und Prioritäten bleiben nachvollziehbar.</p>
+    </article>
+    <article>
+      <span>02</span>
+      <h3>Wissenstransfer</h3>
+      <p>Methodenkompetenz und technisches Grundverständnis werden aufgebaut.</p>
+    </article>
+    <article>
+      <span>03</span>
+      <h3>Gemischte Teams</h3>
+      <p>Aktive Entwicklungsarbeit wird durch Coaching und Dokumentation ergänzt.</p>
+    </article>
+  </div>
+</section>
+
+<section className="section diagrams-section reveal-block">
+  <div className="section-heading">
+    <p className="eyebrow">Arbeitsmodell</p>
+    <h2>Vier einfache Modelle für komplexe Vorhaben</h2>
+    <p>
+      Die Diagramme sind bewusst reduziert. Sie zeigen keine technischen
+      Details, sondern die Struktur hinter Analyse, Abstimmung,
+      Koordination und belastbarem Systemaufbau.
+    </p>
+  </div>
+  <div className="diagram-grid">
+    <article className="diagram-card">
+      <div className="diagram-visual" aria-hidden="true">
+        <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="110" cy="20" r="4" fill="currentColor" stroke="none" />
+            <line x1="110" y1="24" x2="110" y2="45" />
+            <rect x="80" y="45" width="60" height="18" rx="6" />
+            <line x1="110" y1="63" x2="110" y2="80" />
+            <rect x="80" y="80" width="60" height="18" rx="6" />
+            <line x1="110" y1="98" x2="110" y2="115" />
+            <rect x="80" y="115" width="60" height="18" rx="6" />
+            <line x1="110" y1="133" x2="110" y2="150" />
+            <line x1="110" y1="150" x2="110" y2="165" />
+            <polyline points="105,160 110,165 115,160" />
+            <rect x="80" y="170" width="60" height="20" rx="6" />
+          </g>
+        </svg>
+      </div>
+      <h3>Analyse bis Ergebnis</h3>
+      <p>Vom Anliegen über Planung und Umsetzung bis zu einem klaren lieferbaren Ergebnis.</p>
+    </article>
+    <article className="diagram-card">
+      <div className="diagram-visual" aria-hidden="true">
+        <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="110" cy="25" r="4" fill="currentColor" stroke="none" />
+            <line x1="110" y1="29" x2="110" y2="60" />
+            <polygon points="80,80 110,60 140,80 110,100" />
+            <line x1="110" y1="100" x2="70" y2="130" />
+            <line x1="110" y1="100" x2="150" y2="130" />
+            <rect x="50" y="130" width="40" height="18" rx="6" />
+            <rect x="130" y="130" width="40" height="18" rx="6" />
+          </g>
+        </svg>
+      </div>
+      <h3>Entscheidungen absichern</h3>
+      <p>Beratung heißt oft, tragfähige Optionen sichtbar zu machen und ihre Konsequenzen zu klären.</p>
+    </article>
+    <article className="diagram-card">
+      <div className="diagram-visual" aria-hidden="true">
+        <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="110" cy="110" r="4" fill="currentColor" stroke="none" />
+            <circle cx="110" cy="40" r="3" />
+            <circle cx="180" cy="110" r="3" />
+            <circle cx="110" cy="180" r="3" />
+            <circle cx="40" cy="110" r="3" />
+            <line x1="110" y1="110" x2="110" y2="40" />
+            <line x1="110" y1="110" x2="180" y2="110" />
+            <line x1="110" y1="110" x2="110" y2="180" />
+            <line x1="110" y1="110" x2="40" y2="110" />
+          </g>
+        </svg>
+      </div>
+      <h3>Gemischte Teams koordinieren</h3>
+      <p>Fachseite, Entwicklung und Betrieb müssen verbunden werden, nicht nebeneinander laufen.</p>
+    </article>
+    <article className="diagram-card">
+      <div className="diagram-visual" aria-hidden="true">
+        <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="110" cy="20" r="4" fill="currentColor" stroke="none" />
+            <line x1="110" y1="24" x2="110" y2="45" />
+            <rect x="70" y="45" width="80" height="14" rx="4" />
+            <line x1="110" y1="59" x2="110" y2="75" />
+            <rect x="70" y="75" width="80" height="14" rx="4" />
+            <line x1="110" y1="89" x2="110" y2="105" />
+            <rect x="70" y="105" width="80" height="14" rx="4" />
+            <line x1="110" y1="119" x2="110" y2="140" />
+            <rect x="80" y="140" width="60" height="18" rx="6" />
+          </g>
+        </svg>
+      </div>
+      <h3>Systematisch aufbauen</h3>
+      <p>Substanz entsteht schichtweise: Standards, Struktur, Betrieb und daraus ein belastbares Ergebnis.</p>
+    </article>
+  </div>
+</section>
+
+<section className="section section-grid reveal-block" id="substanz">
+  <div className="section-heading">
+    <p className="eyebrow">Substanz</p>
+    <h2>Strukturell tragfähig, operativ belastbar</h2>
+  </div>
+  <div className="info-grid two-cols">
+    <article className="substance-card">
+      <h3>Strukturelle Substanz</h3>
+      <ul className="detail-list">
+        <li>zukunftsorientierte Werkzeuge, Schnittstellen und Methoden</li>
+        <li>problemorientierte methodische Flexibilität</li>
+        <li>Wartbarkeit und Erweiterbarkeit durch Konventionen und Best Practices</li>
+        <li>Skalierbarkeit wird von Anfang an mitgedacht</li>
+      </ul>
+    </article>
+    <article className="substance-card">
+      <h3>Operative Substanz</h3>
+      <ul className="detail-list">
+        <li>Nutzerzentrierung und Usability im Arbeitsalltag</li>
+        <li>Monitoring interner Prozesse und Systemzustände</li>
+        <li>Resilienz, kontrollierte Erholung und sichere Betriebsszenarien</li>
+        <li>Installation und Betrieb müssen leicht und verlässlich möglich sein</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section className="section principles-section reveal-block">
+  <div className="section-heading">
+    <p className="eyebrow">Entwicklungsgrundsätze</p>
+    <h2>Klare Prinzipien statt methodischer Beliebigkeit</h2>
+  </div>
+  <div className="info-grid three-cols principles-grid">
+    <article className="image-card image-card-compact">
+      <img
+        src="/assets/images/brand/abstract-gradient-grid.jpg"
+        alt="Abstraktes Raster mit weichen Farbverläufen"
+      />
+    </article>
+    <article className="image-card image-card-compact">
+      <img
+        src="/assets/images/brand/abstract-gradient-texture.jpg"
+        alt="Abstrakte Textur mit weichen Farbflächen"
+      />
+    </article>
+    <article className="rhythm-copy">
+      <p>
+        Standards, Automatisierung und Modularisierung schaffen nicht nur
+        Ordnung im Code, sondern auch mehr Ruhe in Entscheidungen und im
+        laufenden Betrieb.
+      </p>
+    </article>
+    <article className="info-card">
+      <h3>Nutzerzentrierung</h3>
+      <p>Die Unterstützung des Anwenders steht im Fokus jeder Entscheidung.</p>
+    </article>
+    <article className="info-card">
+      <h3>Standards &amp; Konventionen</h3>
+      <p>Code-Style, Architekturprinzipien, Security- und Schnittstellenstandards schaffen Orientierung.</p>
+    </article>
+    <article className="info-card">
+      <h3>Automatisierung</h3>
+      <p>Tests, CI/CD, Betriebsmodell, Monitoring und Dokumentation werden systematisch aufgebaut.</p>
+    </article>
+    <article className="info-card">
+      <h3>Agile Entwicklung</h3>
+      <p>Kurze Entwicklungszyklen mit Fokus auf Mehrwert, Flexibilität und Feedback.</p>
+    </article>
+    <article className="info-card">
+      <h3>Divide &amp; Conquer</h3>
+      <p>Komplexität wird durch klare Strukturierung und sinnvolle Modularisierung reduziert.</p>
+    </article>
+    <article className="info-card">
+      <h3>Bestehendes nutzen</h3>
+      <p>Vorhandene Lösungen, Standards und Open Source werden bewusst eingebunden.</p>
+    </article>
+  </div>
+</section>
+
+<section className="section mvp-section reveal-block" id="mvp">
+  <div className="section-heading">
+    <p className="eyebrow">Risikominimiertes Vorgehen</p>
+    <h2>In drei Schritten zum MVP</h2>
+    <p>
+      Jede Phase ist in sich abgeschlossen und schafft eine transparente
+      Entscheidungsgrundlage für die nächsten Schritte.
+    </p>
+  </div>
+  <div className="timeline">
+    <article className="timeline-step">
+      <span className="timeline-number">1</span>
+      <h3>Analysephase</h3>
+      <p>Gemeinsames Problem- und Zielverständnis, funktionale und nicht-funktionale Anforderungen, Rahmenbedingungen.</p>
+      <p className="timeline-result">Ergebnis: abgestimmte Zieldefinition des MVP.</p>
+    </article>
+    <article className="timeline-step">
+      <span className="timeline-number">2</span>
+      <h3>Konzeptionsphase</h3>
+      <p>Konkretes Lösungsbild für den MVP, fachlicher und technischer Umsetzungsrahmen, Priorisierung und Aufwandsabschätzung.</p>
+      <p className="timeline-result">Ergebnis: belastbare Aufwandsabschätzung und Angebot.</p>
+    </article>
+    <article className="timeline-step">
+      <span className="timeline-number">3</span>
+      <h3>Umsetzungsphase</h3>
+      <p>Iterative Entwicklung des abgestimmten MVP mit Reviews, Feedbackschleifen und transparenter Fortschrittskommunikation.</p>
+      <p className="timeline-result">Ergebnis: abnahmefähiger MVP als Ausgangspunkt für die weitere Entwicklung.</p>
+    </article>
+  </div>
+</section>
+
+<section className="section skeleton-section reveal-block">
+  <div className="section-heading">
+    <p className="eyebrow">Walking Skeleton</p>
+    <h2>Früh ein funktionaler Kern statt spät ein großes Versprechen</h2>
+  </div>
+  <div className="info-grid three-cols">
+    <article className="info-card">
+      <h3>Radikal reduziert</h3>
+      <p>Ein MVP beginnt mit einem bewusst abgespeckten, aber vollständigen Kernbaustein.</p>
+    </article>
+    <article className="info-card">
+      <h3>End-to-End</h3>
+      <p>Der Kern ist nicht theoretisch, sondern funktioniert durchgängig als Miniatur des späteren Systems.</p>
+    </article>
+    <article className="info-card">
+      <h3>Frühes Lernen</h3>
+      <p>Kommunikation, Kooperation und Kennzahlen für Aufwand und Weiterentwicklung werden früh geschärft.</p>
+    </article>
+  </div>
+</section>
+
+<section className="section contact-section reveal-block" id="kontakt">
+  <div className="section-heading">
+    <p className="eyebrow">Kontakt</p>
+    <h2>Gespräch über Zielbild, Herausforderungen und MVP starten</h2>
+  </div>
+  <div className="contact-grid">
+    <article className="contact-card">
+      <h3>Dr. Martina Vitt</h3>
+      <p><a href="mailto:martina.vitt@softwareplantation.de">martina.vitt@softwareplantation.de</a></p>
+      <p><a href="tel:+491773337571">+49 177 3337571</a></p>
+    </article>
+    <article className="contact-card">
+      <h3>Matthias Vitt</h3>
+      <p><a href="mailto:matthias.vitt@softwareplantation.de">matthias.vitt@softwareplantation.de</a></p>
+      <p><a href="tel:+491726698638">+49 172 6698638</a></p>
+    </article>
+    <article className="contact-card">
+      <h3>Web</h3>
+      <p><a href="https://www.softwareplantation.de">www.softwareplantation.de</a></p>
+      <p>Software Plantation GmbH</p>
+    </article>
+  </div>
+</section>

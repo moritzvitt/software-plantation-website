@@ -1,0 +1,69 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Software Plantation GmbH",
+  description = "Software Plantation GmbH professionalisiert Softwareentwicklung in KMU mit Substanz, klarer Architektur und einem risikominimierten Weg zum MVP.",
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <button
+          class="mobile-nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Navigation öffnen"
+        >
+          <img
+            class="brand-logo"
+            src="/assets/Logo/SoftwarePlantation_Logo_schwarz.svg"
+            alt=""
+          />
+        </button>
+        <a class="brand" href="#top" aria-label="Software Plantation Startseite">
+          <img
+            class="brand-logo"
+            src="/assets/Logo/SoftwarePlantation_Logo_schwarz.svg"
+            alt="Software Plantation Logo"
+          />
+          <span class="brand-text">Software Plantation</span>
+        </a>
+        <nav class="site-nav" id="site-nav" aria-label="Primär">
+          <a href="#kunden">Kunden</a>
+          <a href="#herausforderungen">Herausforderungen</a>
+          <a href="#substanz">Substanz</a>
+          <a href="#mvp">MVP</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <p>Software Plantation GmbH</p>
+        <p>Software mit Substanz. Zusammenarbeit auf Augenhöhe. In drei Schritten zum MVP.</p>
+      </footer>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
