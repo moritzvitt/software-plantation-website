@@ -157,6 +157,7 @@ if (mobileNavToggle && siteHeader) {
 backgroundButtons.forEach((button) => {
   button.addEventListener("click", () => {
     applyDisplaySetting("bg", button.getAttribute("data-bg-option"));
+    applyDisplaySetting("theme", "");
   });
 });
 

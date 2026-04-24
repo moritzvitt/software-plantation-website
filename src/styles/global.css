@@ -438,6 +438,12 @@ p {
   line-height: 1.38;
 }
 
+.plain-list li:last-child,
+.principle-stack p:last-child,
+.contact-list p:last-child {
+  border-bottom: 0;
+}
+
 .plain-list span,
 .timeline span {
   color: var(--orange);
@@ -1316,6 +1322,10 @@ p {
     padding: 24px 0;
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .timeline li:last-child {
+    border-bottom: 0;
   }
 
   .site-footer {
