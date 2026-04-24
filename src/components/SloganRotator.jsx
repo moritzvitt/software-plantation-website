@@ -2,10 +2,10 @@ import { Calligraph } from "calligraph";
 import { useState } from "react";
 
 const SLOGANS = [
-  ["Wenn Software", "plötzlich kritisch wird."],
-  ["Software wird", "zum Engpass?"],
-  ["Wenn Ihre Software", "nicht mehr mithält."],
-  ["Was gestern gereicht hat,", "bremst heute."],
+  ["Wenn Software", "plötzlich", "kritisch wird."],
+  ["Software", "wird zum", "Engpass?"],
+  ["Wenn Ihre", "Software", "nicht mehr", "mithält."],
+  ["Was gestern", "gereicht hat,", "bremst heute."],
 ];
 
 export default function SloganRotator() {
@@ -20,7 +20,9 @@ export default function SloganRotator() {
     >
       {SLOGANS[index].map((line) => (
         <span className="slogan-line" key={line}>
-          <Calligraph drift={{ x: 1.4, y: 0.2 }}>{line}</Calligraph>
+          <Calligraph autoSize={false} drift={{ x: 1.4, y: 0.2 }}>
+            {line}
+          </Calligraph>
         </span>
       ))}
     </button>

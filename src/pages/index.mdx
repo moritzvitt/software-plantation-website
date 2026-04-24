@@ -4,9 +4,11 @@ layout: ../layouts/BaseLayout.astro
 
 import SloganRotator from "../components/SloganRotator.jsx";
 
+export const withBase = (path) => `${import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`}${path.replace(/^\//, "")}`;
+
 <section className="hero logo-hero section">
   <div className="hero-mark" aria-hidden="true">
-    <img src="/assets/Logo/SoftwarePlantation_Logo_farb.svg" alt="" />
+    <img src={withBase("/assets/Logo/SoftwarePlantation_Logo_farb.svg")} alt="" />
   </div>
 </section>
 
@@ -31,7 +33,7 @@ import SloganRotator from "../components/SloganRotator.jsx";
 <section className="section deck-slide problem-slide reveal-block" id="herausforderungen">
   <div className="slide-kicker">Ausgangslage</div>
   <div className="problem-layout">
-    <h2>Wenn Software wächst, wachsen Reibung, Risiko und Verantwortung mit.</h2>
+    <h2>Wenn Software wächst, wächst die Verantwortung.</h2>
     <ul className="plain-list">
       <li><span>01</span> Entwicklungsprozesse sind zu wenig belastbar.</li>
       <li><span>02</span> Architekturentscheidungen werden schwerer reversibel.</li>
@@ -45,7 +47,7 @@ import SloganRotator from "../components/SloganRotator.jsx";
   <div className="slide-kicker">Zusammenarbeit</div>
   <div className="split-layout">
     <div>
-      <h2>Nicht externer Lieferant, sondern temporär Teil des Teams.</h2>
+      <h2>Kurzzeitig im Team. Dauerhaft mehr Klarheit.</h2>
       <p>Entscheidungen werden transparent getroffen, Annahmen offen benannt und Risiken gemeinsam bewertet. Ziel ist nicht neue Abhängigkeit, sondern Professionalisierung und mehr Unabhängigkeit.</p>
     </div>
     <div className="principle-stack" aria-label="Arbeitsprinzipien">
@@ -95,7 +97,7 @@ import SloganRotator from "../components/SloganRotator.jsx";
 <section className="section deck-slide mvp-section reveal-block" id="mvp">
   <div className="slide-kicker">Vorgehen</div>
   <div className="slide-copy">
-    <h2>In drei kontrollierten Schritten zum MVP.</h2>
+    <h2>In drei Schritten zum MVP.</h2>
     <p>Jede Phase ist in sich abgeschlossen und schafft eine transparente Entscheidungsgrundlage für den nächsten Schritt.</p>
   </div>
   <ol className="timeline">
@@ -134,7 +136,7 @@ import SloganRotator from "../components/SloganRotator.jsx";
 <section className="section deck-slide contact-section reveal-block" id="kontakt">
   <div className="slide-kicker">Kontakt</div>
   <div className="contact-layout">
-    <h2>Gespräch über Zielbild, Herausforderungen und MVP starten.</h2>
+    <h2>Lassen Sie uns Ihre Software wieder tragfähig machen.</h2>
     <div className="contact-list">
       <p><strong>Dr. Martina Vitt</strong><a href="mailto:martina.vitt@softwareplantation.de">{"martina.vitt@softwareplantation.de"}</a><a href="tel:+491773337571">+49 177 3337571</a></p>
       <p><strong>Matthias Vitt</strong><a href="mailto:matthias.vitt@softwareplantation.de">{"matthias.vitt@softwareplantation.de"}</a><a href="tel:+491726698638">+49 172 6698638</a></p>

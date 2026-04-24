@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-label="CI/CD Kreislauf">
-  <path d="M376 180C304 64 172 42 104 110c-70 70-28 176 70 176 72 0 126-50 202-106Z" fill="none" stroke="#86bc25" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M384 180c72 116 204 138 272 70 70-70 28-176-70-176-72 0-126 50-202 106Z" fill="none" stroke="#ef7d00" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M276 180h208" fill="none" stroke="#8f8880" stroke-width="26" stroke-linecap="round"/>
-  <circle cx="174" cy="286" r="16" fill="#ef7d00"/>
-  <circle cx="586" cy="74" r="16" fill="#86bc25"/>
-  <path d="M126 106s-42-14-48 24c28 26 48-24 48-24ZM634 254s42 14 48-24c-28-26-48 24-48 24Z" fill="#86bc25"/>
-</svg>

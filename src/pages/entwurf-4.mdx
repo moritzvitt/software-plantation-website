@@ -3,8 +3,10 @@ layout: ../layouts/BaseLayout.astro
 title: Software Plantation GmbH - Entwurf 04 Präsentation
 ---
 
+export const withBase = (path) => `${import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`}${path.replace(/^\//, "")}`;
+
 <section className="section presentation-logo-cover">
-  <img src="/assets/Logo/SoftwarePlantation_Logo_farb.svg" alt="Software Plantation Logo" />
+  <img src={withBase("/assets/Logo/SoftwarePlantation_Logo_farb.svg")} alt="Software Plantation Logo" />
 </section>
 
 <section className="section presentation-cover">
@@ -202,7 +204,7 @@ title: Software Plantation GmbH - Entwurf 04 Präsentation
       <p>Zukunftsfähigkeit</p>
     </div>
   </div>
-  <img className="focus-image" src="/assets/presentation-style/sp-focus.svg" alt="" aria-hidden="true" />
+  <img className="focus-image" src={withBase("/assets/presentation-style/sp-focus.svg")} alt="" aria-hidden="true" />
 </section>
 
 <section className="section presentation-slide">
@@ -257,12 +259,12 @@ title: Software Plantation GmbH - Entwurf 04 Präsentation
     <h2>Technischer Appendix</h2>
     <div className="appendix-grid">
       <article>
-        <img src="/assets/presentation-style/sp-container.svg" alt="" aria-hidden="true" />
+        <img src={withBase("/assets/presentation-style/sp-container.svg")} alt="" aria-hidden="true" />
         <h3>Container & VM</h3>
         <p>Komplexitätsreduzierung, Portabilität, Skalierbarkeit, schnelle Neustarts und standardisierte Laufzeitumgebungen.</p>
       </article>
       <article>
-        <img src="/assets/presentation-style/sp-documentation.svg" alt="" aria-hidden="true" />
+        <img src={withBase("/assets/presentation-style/sp-documentation.svg")} alt="" aria-hidden="true" />
         <h3>Dokumentation</h3>
         <p>Projekt-Dokumentation, Entwickler-Manual, User Manual, Know-how-Transfer und Integration von Expertenwissen.</p>
       </article>
@@ -271,7 +273,7 @@ title: Software Plantation GmbH - Entwurf 04 Präsentation
 </section>
 
 <section className="section presentation-thanks" id="kontakt">
-  <img src="/assets/Logo/SoftwarePlantation_Logo_farb.svg" alt="Software Plantation Logo" />
+  <img src={withBase("/assets/Logo/SoftwarePlantation_Logo_farb.svg")} alt="Software Plantation Logo" />
   <div>
     <p className="eyebrow">Kontakt</p>
     <h2>Vielen Dank für Ihre Aufmerksamkeit.</h2>

@@ -374,6 +374,7 @@ p {
 
 .statement-slide h2 {
   max-width: min(14ch, 100%);
+  font-size: clamp(2.1rem, 7.8vw, 5.2rem);
 }
 
 .slogan-rotator {
@@ -1391,6 +1392,15 @@ p {
 
   h2 {
     font-size: clamp(2.35rem, 13vw, 4rem);
+  }
+
+  .statement-slide h2 {
+    max-width: 100%;
+    font-size: clamp(2rem, 9vw, 2.85rem);
+  }
+
+  .slogan-rotator {
+    width: 100%;
   }
 
   .button {

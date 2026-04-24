@@ -3,6 +3,8 @@ layout: ../layouts/BaseLayout.astro
 title: Software Plantation GmbH - Navigationstest
 ---
 
+export const withBase = (path) => `${import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`}${path.replace(/^\//, "")}`;
+
 <section className="section nav-test-hero">
   <p className="eyebrow">Navigationstest</p>
   <h1>Navbars im direkten Vergleich.</h1>
@@ -11,16 +13,16 @@ title: Software Plantation GmbH - Navigationstest
 
 <section className="nav-demo-section">
   <header className="nav-demo nav-demo-classic">
-    <a className="nav-demo-brand" href="/entwurf-4/">
-      <img src="/assets/Logo/SoftwarePlantation_Logo_farb.svg" alt="" />
+    <a className="nav-demo-brand" href={withBase("/entwurf-4/")}>
+      <img src={withBase("/assets/Logo/SoftwarePlantation_Logo_farb.svg")} alt="" />
       <span>Software Plantation</span>
     </a>
     <nav aria-label="Klassische Navigation">
-      <a href="/entwurf-4/#kunden">Kunden</a>
-      <a href="/entwurf-4/#herausforderungen">Herausforderungen</a>
-      <a href="/entwurf-4/#substanz">Substanz</a>
-      <a href="/entwurf-4/#mvp">MVP</a>
-      <a href="/entwurf-4/#kontakt">Kontakt</a>
+      <a href={withBase("/entwurf-4/#kunden")}>Kunden</a>
+      <a href={withBase("/entwurf-4/#herausforderungen")}>Herausforderungen</a>
+      <a href={withBase("/entwurf-4/#substanz")}>Substanz</a>
+      <a href={withBase("/entwurf-4/#mvp")}>MVP</a>
+      <a href={withBase("/entwurf-4/#kontakt")}>Kontakt</a>
     </nav>
   </header>
   <div>
@@ -32,14 +34,14 @@ title: Software Plantation GmbH - Navigationstest
 
 <section className="nav-demo-section">
   <header className="nav-demo nav-demo-minimal">
-    <a className="nav-demo-mark" href="/entwurf-4/" aria-label="Software Plantation Präsentation">
-      <img src="/assets/Logo/SoftwarePlantation_Logo_farb.svg" alt="" />
+    <a className="nav-demo-mark" href={withBase("/entwurf-4/")} aria-label="Software Plantation Präsentation">
+      <img src={withBase("/assets/Logo/SoftwarePlantation_Logo_farb.svg")} alt="" />
     </a>
     <nav aria-label="Minimale Navigation">
-      <a href="/entwurf-4/#kunden">01</a>
-      <a href="/entwurf-4/#herausforderungen">02</a>
-      <a href="/entwurf-4/#substanz">03</a>
-      <a href="/entwurf-4/#mvp">04</a>
+      <a href={withBase("/entwurf-4/#kunden")}>01</a>
+      <a href={withBase("/entwurf-4/#herausforderungen")}>02</a>
+      <a href={withBase("/entwurf-4/#substanz")}>03</a>
+      <a href={withBase("/entwurf-4/#mvp")}>04</a>
     </nav>
   </header>
   <div>
@@ -52,11 +54,11 @@ title: Software Plantation GmbH - Navigationstest
 <section className="nav-demo-section">
   <header className="nav-demo nav-demo-index">
     <nav aria-label="Index Navigation">
-      <a href="/entwurf-4/#kunden"><span>01</span>Kunden</a>
-      <a href="/entwurf-4/#herausforderungen"><span>02</span>Herausforderungen</a>
-      <a href="/entwurf-4/#substanz"><span>03</span>Substanz</a>
-      <a href="/entwurf-4/#mvp"><span>04</span>MVP</a>
-      <a href="/entwurf-4/#kontakt"><span>05</span>Kontakt</a>
+      <a href={withBase("/entwurf-4/#kunden")}><span>01</span>Kunden</a>
+      <a href={withBase("/entwurf-4/#herausforderungen")}><span>02</span>Herausforderungen</a>
+      <a href={withBase("/entwurf-4/#substanz")}><span>03</span>Substanz</a>
+      <a href={withBase("/entwurf-4/#mvp")}><span>04</span>MVP</a>
+      <a href={withBase("/entwurf-4/#kontakt")}><span>05</span>Kontakt</a>
     </nav>
   </header>
   <div>
@@ -68,11 +70,11 @@ title: Software Plantation GmbH - Navigationstest
 
 <section className="nav-demo-section">
   <header className="nav-demo nav-demo-footerish">
-    <a href="/entwurf-4/">Zur Präsentation</a>
+    <a href={withBase("/entwurf-4/")}>Zur Präsentation</a>
     <nav aria-label="Leise Navigation">
-      <a href="/entwurf-4/#substanz">Substanz</a>
-      <a href="/entwurf-4/#mvp">MVP</a>
-      <a href="/entwurf-4/#kontakt">Kontakt</a>
+      <a href={withBase("/entwurf-4/#substanz")}>Substanz</a>
+      <a href={withBase("/entwurf-4/#mvp")}>MVP</a>
+      <a href={withBase("/entwurf-4/#kontakt")}>Kontakt</a>
     </nav>
   </header>
   <div>

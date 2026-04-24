@@ -6,7 +6,15 @@ const {
   description = "Software Plantation GmbH professionalisiert Softwareentwicklung in KMU mit Substanz, klarer Architektur und einem risikominimierten Weg zum MVP.",
 } = Astro.props;
 
-const currentPath = Astro.url.pathname;
+const basePath = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const withBase = (path) => `${basePath}${path.replace(/^\//, "")}`;
+const baseSegment = basePath.replace(/\/$/, "");
+const rawPath = Astro.url.pathname.replace(/\/index\.html$/, "/");
+const currentPath = baseSegment && rawPath.startsWith(baseSegment)
+  ? rawPath.slice(baseSegment.length) || "/"
+  : rawPath;
 const defaultBackground = currentPath === "/" ? "white" : "warm";
 const hideHeaderPaths = ["/", "/entwurf-4/", "/nav-test/"];
 const showHeader = !hideHeaderPaths.includes(currentPath);
@@ -39,14 +47,14 @@ const showHeader = !hideHeaderPaths.includes(currentPath);
           >
             <img
               class="brand-logo"
-              src="/assets/Logo/SoftwarePlantation_Logo_farb.svg"
+              src={withBase("/assets/Logo/SoftwarePlantation_Logo_farb.svg")}
               alt=""
             />
           </button>
           <a class="brand" href="#top" aria-label="Software Plantation Startseite">
             <img
               class="brand-logo"
-              src="/assets/Logo/SoftwarePlantation_Logo_farb.svg"
+              src={withBase("/assets/Logo/SoftwarePlantation_Logo_farb.svg")}
               alt="Software Plantation Logo"
             />
             <span class="brand-text">Software Plantation</span>
@@ -72,11 +80,11 @@ const showHeader = !hideHeaderPaths.includes(currentPath);
         </div>
         <nav class="footer-variants" aria-label="Landingpage-Entwürfe">
           <span>Entwürfe vergleichen</span>
-          <a href="/">01 Deck</a>
-          <a href="/entwurf-2/">02 Kompakt</a>
-          <a href="/entwurf-3/">03 Editorial</a>
-          <a href="/entwurf-4/">04 Präsentation</a>
-          <a href="/nav-test/">Nav Test</a>
+          <a href={withBase("/")}>01 Deck</a>
+          <a href={withBase("/entwurf-2/")}>02 Kompakt</a>
+          <a href={withBase("/entwurf-3/")}>03 Editorial</a>
+          <a href={withBase("/entwurf-4/")}>04 Präsentation</a>
+          <a href={withBase("/nav-test/")}>Nav Test</a>
         </nav>
         <section class="footer-config" aria-label="Darstellung testen">
           <p>Darstellung testen</p>
@@ -111,6 +119,6 @@ const showHeader = !hideHeaderPaths.includes(currentPath);
       </footer>
     </div>
 
-    <script is:inline src="/script.js"></script>
+    <script src={withBase("/script.js")}></script>
   </body>
 </html>
