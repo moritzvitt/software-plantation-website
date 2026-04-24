@@ -2,3 +2,9 @@ node_modules/
 dist/
 .astro/
 .DS_Store
+public/assets/presentation/
+public/assets/presentation-style/sp-cicd.svg
+public/assets/presentation-style/sp-mountain.svg
+public/assets/presentation-style/sp-operations.svg
+public/assets/presentation-style/sp-skeleton.svg
+public/assets/presentation-style/sp-structure.svg

@@ -377,7 +377,7 @@ p {
 }
 
 .slogan-rotator {
-  display: inline;
+  display: block;
   max-width: 100%;
   padding: 0;
   border: 0;
@@ -390,6 +390,11 @@ p {
   letter-spacing: inherit;
   text-align: left;
   cursor: pointer;
+}
+
+.slogan-line {
+  display: block;
+  max-width: 100%;
 }
 
 .slogan-rotator:focus-visible {
