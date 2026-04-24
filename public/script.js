@@ -3,6 +3,58 @@ const sectionLinks = document.querySelectorAll('a[href^="#"]');
 const siteHeader = document.querySelector(".site-header");
 const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
 const heroSection = document.querySelector(".hero");
+const backgroundButtons = document.querySelectorAll("[data-bg-option]");
+const widthButtons = document.querySelectorAll("[data-width-option]");
+const themeButtons = document.querySelectorAll("[data-theme-option]");
+const typeButtons = document.querySelectorAll("[data-type-option]");
+
+function setActiveButton(buttons, attr, value) {
+  buttons.forEach((button) => {
+    button.classList.toggle("is-active", button.getAttribute(attr) === value);
+  });
+}
+
+function applyDisplaySetting(type, value) {
+  document.body.dataset[type] = value;
+
+  if (value) {
+    localStorage.setItem(`sp-${type}`, value);
+  } else {
+    localStorage.removeItem(`sp-${type}`);
+  }
+
+  if (type === "bg") {
+    setActiveButton(backgroundButtons, "data-bg-option", value);
+  }
+
+  if (type === "width") {
+    setActiveButton(widthButtons, "data-width-option", value);
+  }
+
+  if (type === "theme") {
+    setActiveButton(themeButtons, "data-theme-option", value);
+  }
+
+  if (type === "type") {
+    setActiveButton(typeButtons, "data-type-option", value);
+  }
+}
+
+function initDisplaySettings() {
+  const savedBackground = localStorage.getItem("sp-bg");
+  const savedWidth = localStorage.getItem("sp-width");
+  const savedTheme = localStorage.getItem("sp-theme");
+  const savedType = localStorage.getItem("sp-type");
+  const initialBackground = savedBackground || document.body.dataset.bg || "warm";
+  const initialWidth = savedWidth || document.body.dataset.width || "normal";
+  const initialTheme = savedTheme || document.body.dataset.theme || "";
+  const initialType = savedType || document.body.dataset.type || "classic";
+
+  applyDisplaySetting("bg", initialBackground);
+  applyDisplaySetting("width", initialWidth);
+  applyDisplaySetting("theme", initialTheme);
+  applyDisplaySetting("type", initialType);
+}
 
 function isMobileHeaderMode() {
   return window.matchMedia("(max-width: 780px)").matches;
@@ -101,6 +153,34 @@ if (mobileNavToggle && siteHeader) {
     }
   });
 }
+
+backgroundButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    applyDisplaySetting("bg", button.getAttribute("data-bg-option"));
+  });
+});
+
+widthButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    applyDisplaySetting("width", button.getAttribute("data-width-option"));
+  });
+});
+
+themeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const value = button.getAttribute("data-theme-option");
+    const nextValue = document.body.dataset.theme === value ? "" : value;
+    applyDisplaySetting("theme", nextValue);
+  });
+});
+
+typeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    applyDisplaySetting("type", button.getAttribute("data-type-option"));
+  });
+});
+
+initDisplaySettings();
 
 updateCompactHeader();
 window.addEventListener("scroll", updateCompactHeader, { passive: true });

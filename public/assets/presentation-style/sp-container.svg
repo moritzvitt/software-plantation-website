@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 260" role="img" aria-label="Container und Infrastruktur">
+  <rect x="36" y="52" width="208" height="52" rx="8" fill="none" stroke="#373028" stroke-width="9"/>
+  <rect x="36" y="118" width="208" height="52" rx="8" fill="none" stroke="#373028" stroke-width="9"/>
+  <rect x="36" y="184" width="208" height="42" rx="8" fill="none" stroke="#373028" stroke-width="9"/>
+  <path d="M78 78h36M134 78h36M78 144h36M134 144h36M78 205h92" fill="none" stroke="#373028" stroke-width="8" stroke-linecap="round"/>
+  <path d="M210 52s34-2 34 28c-26 14-34-28-34-28ZM70 170s-34 2-34-28c26-14 34 28 34 28Z" fill="#86bc25"/>
+  <circle cx="210" cy="144" r="13" fill="#ef7d00"/>
+</svg>

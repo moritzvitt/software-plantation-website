@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Fokussierung">
+  <circle cx="160" cy="160" r="110" fill="none" stroke="#373028" stroke-width="10"/>
+  <circle cx="160" cy="160" r="62" fill="none" stroke="#86bc25" stroke-width="12"/>
+  <circle cx="160" cy="160" r="18" fill="#ef7d00"/>
+  <path d="M160 50V18M160 302v-32M50 160H18M302 160h-32" fill="none" stroke="#373028" stroke-width="8" stroke-linecap="round"/>
+  <path d="M212 80s38-4 38 30c-29 16-38-30-38-30ZM108 240s-38 4-38-30c29-16 38 30 38 30Z" fill="#86bc25"/>
+</svg>

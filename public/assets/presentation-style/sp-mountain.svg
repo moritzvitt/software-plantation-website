@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Stilisierter Berg mit Software-Plantation-Bildsprache">
+  <path d="M72 348 242 112l74 92 70-122 182 266H72Z" fill="none" stroke="#373028" stroke-width="18" stroke-linejoin="round"/>
+  <path d="m242 112 23 100 51-8 70-122 48 118" fill="none" stroke="#373028" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M170 348v-44h70l58-58h58l64 64h70v38" fill="none" stroke="#373028" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M194 304c-24-20-8-44-8-44s30 5 28 34c-8 6-14 9-20 10Z" fill="#86bc25"/>
+  <path d="M248 278c-24-20-8-44-8-44s30 5 28 34c-8 6-14 9-20 10Z" fill="#86bc25"/>
+  <path d="M430 304c24-20 8-44 8-44s-30 5-28 34c8 6 14 9 20 10Z" fill="#86bc25"/>
+  <circle cx="312" cy="246" r="16" fill="#ef7d00"/>
+  <circle cx="420" cy="310" r="14" fill="#ef7d00"/>
+  <circle cx="194" cy="304" r="12" fill="#ef7d00"/>
+</svg>

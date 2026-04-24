@@ -1,0 +1,83 @@
+---
+layout: ../layouts/BaseLayout.astro
+title: Software Plantation GmbH - Navigationstest
+---
+
+<section className="section nav-test-hero">
+  <p className="eyebrow">Navigationstest</p>
+  <h1>Navbars im direkten Vergleich.</h1>
+  <p>Diese Seite ist nur zum Testen gedacht: Beim Scrollen erscheinen verschiedene Navigationsvarianten im Kontext einer ruhigen Präsentationsseite.</p>
+</section>
+
+<section className="nav-demo-section">
+  <header className="nav-demo nav-demo-classic">
+    <a className="nav-demo-brand" href="/entwurf-4/">
+      <img src="/assets/Logo/SoftwarePlantation_Logo_farb.svg" alt="" />
+      <span>Software Plantation</span>
+    </a>
+    <nav aria-label="Klassische Navigation">
+      <a href="/entwurf-4/#kunden">Kunden</a>
+      <a href="/entwurf-4/#herausforderungen">Herausforderungen</a>
+      <a href="/entwurf-4/#substanz">Substanz</a>
+      <a href="/entwurf-4/#mvp">MVP</a>
+      <a href="/entwurf-4/#kontakt">Kontakt</a>
+    </nav>
+  </header>
+  <div>
+    <p className="deck-number">01</p>
+    <h2>Klassisch, aber zurückhaltend.</h2>
+    <p>Logo, Name und Kapitel bleiben sichtbar. Gut für Orientierung, aber auf den Präsentationsseiten konkurriert diese Variante schnell mit der Folie.</p>
+  </div>
+</section>
+
+<section className="nav-demo-section">
+  <header className="nav-demo nav-demo-minimal">
+    <a className="nav-demo-mark" href="/entwurf-4/" aria-label="Software Plantation Präsentation">
+      <img src="/assets/Logo/SoftwarePlantation_Logo_farb.svg" alt="" />
+    </a>
+    <nav aria-label="Minimale Navigation">
+      <a href="/entwurf-4/#kunden">01</a>
+      <a href="/entwurf-4/#herausforderungen">02</a>
+      <a href="/entwurf-4/#substanz">03</a>
+      <a href="/entwurf-4/#mvp">04</a>
+    </nav>
+  </header>
+  <div>
+    <p className="deck-number">02</p>
+    <h2>Minimal wie Foliennavigation.</h2>
+    <p>Diese Variante wirkt eher wie ein Präsentationswerkzeug: Kapitelnummern statt Website-Menü. Sie ist deutlich ruhiger und lässt die Inhalte stärker atmen.</p>
+  </div>
+</section>
+
+<section className="nav-demo-section">
+  <header className="nav-demo nav-demo-index">
+    <nav aria-label="Index Navigation">
+      <a href="/entwurf-4/#kunden"><span>01</span>Kunden</a>
+      <a href="/entwurf-4/#herausforderungen"><span>02</span>Herausforderungen</a>
+      <a href="/entwurf-4/#substanz"><span>03</span>Substanz</a>
+      <a href="/entwurf-4/#mvp"><span>04</span>MVP</a>
+      <a href="/entwurf-4/#kontakt"><span>05</span>Kontakt</a>
+    </nav>
+  </header>
+  <div>
+    <p className="deck-number">03</p>
+    <h2>Index statt Navbar.</h2>
+    <p>Mehr editorial und weniger SaaS: Die Navigation wirkt wie ein Kapitelindex. Das passt gut, wenn die Seite wirklich als strategische Präsentation gelesen werden soll.</p>
+  </div>
+</section>
+
+<section className="nav-demo-section">
+  <header className="nav-demo nav-demo-footerish">
+    <a href="/entwurf-4/">Zur Präsentation</a>
+    <nav aria-label="Leise Navigation">
+      <a href="/entwurf-4/#substanz">Substanz</a>
+      <a href="/entwurf-4/#mvp">MVP</a>
+      <a href="/entwurf-4/#kontakt">Kontakt</a>
+    </nav>
+  </header>
+  <div>
+    <p className="deck-number">04</p>
+    <h2>Leise Utility-Leiste.</h2>
+    <p>Eine kleine, funktionale Leiste für Rücksprung und zentrale Anker. Am wenigsten markenlastig, aber auch am wenigsten führend.</p>
+  </div>
+</section>

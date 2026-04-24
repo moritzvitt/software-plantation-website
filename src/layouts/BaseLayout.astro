@@ -5,6 +5,11 @@ const {
   title = "Software Plantation GmbH",
   description = "Software Plantation GmbH professionalisiert Softwareentwicklung in KMU mit Substanz, klarer Architektur und einem risikominimierten Weg zum MVP.",
 } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const defaultBackground = currentPath === "/" ? "white" : "warm";
+const hideHeaderPaths = ["/", "/entwurf-4/", "/nav-test/"];
+const showHeader = !hideHeaderPaths.includes(currentPath);
 ---
 
 <!DOCTYPE html>
@@ -21,38 +26,40 @@ const {
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body data-bg={defaultBackground} data-width="normal" data-theme="" data-type="classic">
     <div class="page-shell">
-      <header class="site-header">
-        <button
-          class="mobile-nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Navigation öffnen"
-        >
-          <img
-            class="brand-logo"
-            src="/assets/Logo/SoftwarePlantation_Logo_farb.svg"
-            alt=""
-          />
-        </button>
-        <a class="brand" href="#top" aria-label="Software Plantation Startseite">
-          <img
-            class="brand-logo"
-            src="/assets/Logo/SoftwarePlantation_Logo_farb.svg"
-            alt="Software Plantation Logo"
-          />
-          <span class="brand-text">Software Plantation</span>
-        </a>
-        <nav class="site-nav" id="site-nav" aria-label="Primär">
-          <a href="#kunden">Kunden</a>
-          <a href="#herausforderungen">Herausforderungen</a>
-          <a href="#substanz">Substanz</a>
-          <a href="#mvp">MVP</a>
-          <a href="#kontakt">Kontakt</a>
-        </nav>
-      </header>
+      {showHeader && (
+        <header class="site-header">
+          <button
+            class="mobile-nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Navigation öffnen"
+          >
+            <img
+              class="brand-logo"
+              src="/assets/Logo/SoftwarePlantation_Logo_farb.svg"
+              alt=""
+            />
+          </button>
+          <a class="brand" href="#top" aria-label="Software Plantation Startseite">
+            <img
+              class="brand-logo"
+              src="/assets/Logo/SoftwarePlantation_Logo_farb.svg"
+              alt="Software Plantation Logo"
+            />
+            <span class="brand-text">Software Plantation</span>
+          </a>
+          <nav class="site-nav" id="site-nav" aria-label="Primär">
+            <a href="#kunden">Kunden</a>
+            <a href="#herausforderungen">Herausforderungen</a>
+            <a href="#substanz">Substanz</a>
+            <a href="#mvp">MVP</a>
+            <a href="#kontakt">Kontakt</a>
+          </nav>
+        </header>
+      )}
 
       <main id="top">
         <slot />
@@ -68,7 +75,39 @@ const {
           <a href="/">01 Deck</a>
           <a href="/entwurf-2/">02 Kompakt</a>
           <a href="/entwurf-3/">03 Editorial</a>
+          <a href="/entwurf-4/">04 Präsentation</a>
+          <a href="/nav-test/">Nav Test</a>
         </nav>
+        <section class="footer-config" aria-label="Darstellung testen">
+          <p>Darstellung testen</p>
+          <div>
+            <span>Hintergrund</span>
+            <button type="button" data-bg-option="warm">Warm</button>
+            <button type="button" data-bg-option="white">Weiß</button>
+            <button type="button" data-bg-option="green">Grün</button>
+            <button type="button" data-bg-option="gray">Grau</button>
+          </div>
+          <div>
+            <span>Breite</span>
+            <button type="button" data-width-option="normal">Normal</button>
+            <button type="button" data-width-option="wide">Breit</button>
+          </div>
+          <div>
+            <span>Farbschema</span>
+            <button type="button" data-theme-option="forest">Wald</button>
+            <button type="button" data-theme-option="bright">Weiß</button>
+            <button type="button" data-theme-option="sage">Salbei</button>
+            <button type="button" data-theme-option="clay">Ton</button>
+            <button type="button" data-theme-option="steel">Stahl</button>
+          </div>
+          <div>
+            <span>Schriftpalette</span>
+            <button type="button" data-type-option="classic">Klar</button>
+            <button type="button" data-type-option="system">Modern</button>
+            <button type="button" data-type-option="serif">Beratung</button>
+            <button type="button" data-type-option="editorial">Editorial</button>
+          </div>
+        </section>
       </footer>
     </div>
 

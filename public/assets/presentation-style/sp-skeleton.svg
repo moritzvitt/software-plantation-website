@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-label="Walking Skeleton">
+  <path d="M130 32v32M130 64h-34M130 64h34M130 64v44M130 108l-46 42M130 108l46 42M84 150v48M176 150v48" fill="none" stroke="#373028" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="130" cy="32" r="18" fill="none" stroke="#373028" stroke-width="8"/>
+  <circle cx="84" cy="210" r="11" fill="#ef7d00"/>
+  <circle cx="176" cy="210" r="11" fill="#ef7d00"/>
+  <path d="M84 118s-32-8-34 20c21 17 34-20 34-20ZM176 118s32-8 34 20c-21 17-34-20-34-20Z" fill="#86bc25"/>
+  <path d="M66 232h128" fill="none" stroke="#373028" stroke-width="8" stroke-linecap="round"/>
+</svg>

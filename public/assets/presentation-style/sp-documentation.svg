@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 260" role="img" aria-label="Dokumentation und Wissenstransfer">
+  <path d="M78 40h90l34 34v140H78V40Z" fill="none" stroke="#373028" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M168 40v38h34M104 108h72M104 136h72M104 164h48" fill="none" stroke="#373028" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M74 72H48v150h122" fill="none" stroke="#8f8880" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M196 158s38-6 42 30c-28 19-42-30-42-30ZM80 196s-38 6-42-30c28-19 42 30 42 30Z" fill="#86bc25"/>
+  <circle cx="190" cy="188" r="13" fill="#ef7d00"/>
+</svg>
