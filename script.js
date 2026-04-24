@@ -2,6 +2,7 @@ const revealBlocks = document.querySelectorAll(".reveal-block");
 const sectionLinks = document.querySelectorAll('a[href^="#"]');
 const siteHeader = document.querySelector(".site-header");
 const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+const heroSection = document.querySelector(".hero");
 
 function isMobileHeaderMode() {
   return window.matchMedia("(max-width: 780px)").matches;
@@ -14,6 +15,15 @@ function setMobileHeaderOpen(isOpen) {
 
   siteHeader.classList.toggle("is-open", isOpen);
   mobileNavToggle.setAttribute("aria-expanded", String(isOpen));
+}
+
+function updateCompactHeader() {
+  if (!siteHeader || !heroSection) {
+    return;
+  }
+
+  const heroBottom = heroSection.getBoundingClientRect().bottom;
+  siteHeader.classList.toggle("is-compact", heroBottom < 120);
 }
 
 function easeInOutCubic(progress) {
@@ -91,6 +101,10 @@ if (mobileNavToggle && siteHeader) {
     }
   });
 }
+
+updateCompactHeader();
+window.addEventListener("scroll", updateCompactHeader, { passive: true });
+window.addEventListener("resize", updateCompactHeader);
 
 sectionLinks.forEach((link) => {
   const targetId = link.getAttribute("href");
