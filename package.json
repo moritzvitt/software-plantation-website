@@ -13,6 +13,7 @@
     "@astrojs/react": "^4.2.3",
     "astro": "^5.7.4",
     "calligraph": "^1.4.1",
+    "lucide-react": "^1.11.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }

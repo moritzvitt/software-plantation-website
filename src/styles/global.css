@@ -1,4 +1,5 @@
 :root {
+  --viewport-height: 100vh;
   --paper: #fbfaf6;
   --paper-quiet: #f1eee6;
   --ink: #1f1d18;
@@ -14,12 +15,19 @@
   --max: 1180px;
 }
 
+@supports (height: 100svh) {
+  :root {
+    --viewport-height: 100svh;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -27,6 +35,7 @@ body {
   font-family: var(--font-body);
   color: var(--ink);
   background: var(--paper);
+  overflow-x: hidden;
 }
 
 body[data-bg="warm"] {
@@ -144,6 +153,7 @@ button:focus-visible {
   margin: 18px 0 0;
   padding: 12px 0;
   border-bottom: 1px solid var(--line);
+  background: var(--paper);
   background: color-mix(in srgb, var(--paper) 88%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -209,7 +219,7 @@ main > * {
 
 .hero,
 .deck-slide {
-  min-height: min(760px, calc(100vh - 88px));
+  min-height: min(760px, calc(var(--viewport-height) - 88px));
   padding: clamp(54px, 8vw, 112px) 0;
   border-bottom: 1px solid var(--line);
 }
@@ -223,7 +233,7 @@ main > * {
 
 .logo-hero {
   grid-template-columns: 1fr;
-  min-height: min(720px, calc(100vh - 88px));
+  min-height: min(720px, calc(var(--viewport-height) - 88px));
   padding: clamp(48px, 7vw, 92px) 0;
 }
 
@@ -239,6 +249,10 @@ main > * {
 .slide-copy,
 .diagram-copy {
   max-width: 760px;
+}
+
+.hero-intro .hero-copy {
+  max-width: 1040px;
 }
 
 .eyebrow,
@@ -267,8 +281,15 @@ h1 {
   font-weight: 800;
   line-height: 0.94;
   letter-spacing: 0;
-  hyphens: auto;
-  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.hero-intro h1 {
+  max-width: min(12ch, 100%);
+  hyphens: none;
 }
 
 h2 {
@@ -279,8 +300,17 @@ h2 {
   font-weight: 800;
   line-height: 1.02;
   letter-spacing: 0;
-  hyphens: auto;
-  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+@supports (text-wrap: balance) {
+  h1,
+  h2 {
+    text-wrap: balance;
+  }
 }
 
 h3,
@@ -504,6 +534,7 @@ p {
 }
 
 .diagram-boxes rect {
+  fill: var(--paper-quiet);
   fill: color-mix(in srgb, var(--paper) 88%, var(--green) 12%);
 }
 
@@ -710,7 +741,7 @@ p {
   grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
   gap: clamp(32px, 7vw, 92px);
   align-items: end;
-  min-height: min(720px, calc(100vh - 88px));
+  min-height: min(720px, calc(var(--viewport-height) - 88px));
   padding: clamp(54px, 8vw, 112px) 0;
 }
 
@@ -781,7 +812,7 @@ p {
 }
 
 .editorial-hero {
-  min-height: min(760px, calc(100vh - 88px));
+  min-height: min(760px, calc(var(--viewport-height) - 88px));
   padding: clamp(70px, 10vw, 150px) 0;
 }
 
@@ -872,7 +903,7 @@ p {
 .presentation-logo-cover {
   display: grid;
   place-items: center;
-  min-height: min(720px, calc(100vh - 88px));
+  min-height: min(720px, calc(var(--viewport-height) - 88px));
   padding: clamp(48px, 7vw, 92px) 0;
 }
 
@@ -884,7 +915,7 @@ p {
 .presentation-cover {
   display: grid;
   align-items: center;
-  min-height: min(760px, calc(100vh - 88px));
+  min-height: min(760px, calc(var(--viewport-height) - 88px));
   padding: clamp(64px, 9vw, 128px) 0;
 }
 
@@ -1053,6 +1084,7 @@ p {
   width: 52px;
   height: 52px;
   margin-bottom: 22px;
+  border: 1px solid var(--orange);
   border: 1px solid color-mix(in srgb, var(--orange) 76%, var(--ink) 24%);
   color: var(--orange);
   background: var(--orange);
@@ -1160,6 +1192,7 @@ p {
   min-height: 68px;
   padding: 10px 0;
   border-bottom: 1px solid var(--line);
+  background: var(--paper);
   background: color-mix(in srgb, var(--paper) 90%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -1280,7 +1313,7 @@ p {
   }
 
   .logo-hero {
-    min-height: min(520px, calc(100vh - 88px));
+    min-height: min(520px, calc(var(--viewport-height) - 88px));
   }
 
   .hero-intro {
@@ -1477,7 +1510,7 @@ p {
   }
 
   .presentation-logo-cover {
-    min-height: min(520px, calc(100vh - 88px));
+    min-height: min(520px, calc(var(--viewport-height) - 88px));
   }
 
   .presentation-logo-cover img {
